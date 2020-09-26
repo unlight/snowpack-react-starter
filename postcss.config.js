@@ -1,6 +1,20 @@
-const cssnano = require('cssnano');
-const postcssPresetEnv = require('postcss-preset-env');
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    plugins: [cssnano(), postcssPresetEnv(), require('tailwindcss')],
+    plugins: [
+        require('tailwindcss')(),
+        require('postcss-center')(),
+        isProduction
+            ? require('cssnano')({
+                  preset: [
+                      'default',
+                      {
+                          discardComments: {
+                              removeAll: true,
+                          },
+                      },
+                  ],
+              })
+            : undefined,
+    ],
 };
