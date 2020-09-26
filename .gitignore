@@ -43,6 +43,7 @@ typings/
 .env
 # Custom
 dist/
+build/
 ~*
 .idea
 .awcache
