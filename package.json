@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "dev": "snowpack dev",
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.0.1",
+    "@snowpack/plugin-react-refresh": "^2.1.0",
+    "@testing-library/react": "^11.0.4",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/snowpack-env": "^2.3.0",
+    "prettier": "^2.1.2",
+    "snowpack": "^2.11.1",
+    "typescript": "^4.0.3"
+  }
+}
