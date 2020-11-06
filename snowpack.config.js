@@ -10,16 +10,16 @@ module.exports = {
             {
                 htmlMinifierOptions: false,
                 outputPattern: {
-                    css: '[name].[contenthash:4].css',
-                    js: '[name].[contenthash:4].js',
-                    assets: '[name].[contenthash:4].[ext]',
+                    css: '[name].[contenthash:6].css',
+                    js: '[name].[contenthash:6].js',
+                    assets: '[name].[contenthash:6].[ext]',
                 },
                 extendConfig: (config) => {
                     const rules = config.module.rules;
                     const cssRule = rules.find((r) => String(r.test) === '/\\.css$/');
 
                     config.optimization.runtimeChunk = {
-                        name: `runtime`,
+                        name: 'runtime',
                     };
 
                     return config;
