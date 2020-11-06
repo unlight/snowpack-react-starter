@@ -15,6 +15,7 @@ module.exports = {
                     assets: '[name].[contenthash:6].[ext]',
                 },
                 extendConfig: (config) => {
+                    config.output.path = `${config.output.path}/dist`;
                     const rules = config.module.rules;
                     const cssRule = rules.find((r) => String(r.test) === '/\\.css$/');
 
