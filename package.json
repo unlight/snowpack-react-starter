@@ -11,6 +11,8 @@
     "test": "npm run eslint && npm run test:r",
     "test:r": "wtr src/**/*.test.tsx --node-resolve",
     "test:w": "npm run test:r -- --watch",
+    "test:cov": "npm run test:r -- --coverage",
+    "tscheck:w": "tsc --watch --noEmit",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -44,6 +46,6 @@
     "prettier": "^2.1.2",
     "snowpack": "^2.16.1",
     "tailwindcss": "^1.9.6",
-    "typescript": "^4.0.5"
+    "typescript": "^4.1.0-beta"
   }
 }
