@@ -1,9 +1,6 @@
 # snowpack-react-starter
 
-## Issues
+## Issues/Todo
 
--   web-test-runner не работает в typescript
-
-## Todo
-
--   Assert library
+-   web-test-runner https://github.com/snowpackjs/snowpack/discussions/1531
+-   code coverage does not work

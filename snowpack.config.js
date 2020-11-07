@@ -16,6 +16,7 @@ module.exports = {
                 },
                 extendConfig: (config) => {
                     config.output.path = `${config.output.path}/dist`;
+                    config.output.publicPath = '';
                     const rules = config.module.rules;
                     const cssRule = rules.find((r) => String(r.test) === '/\\.css$/');
 

@@ -1,0 +1,12 @@
+#!/bin/bash
+PATH="$PWD/node_modules/.bin":$PATH
+set -e
+
+build() {
+    set -x
+    snowpack build
+    cp -fv build/index.html build/dist
+    set +x
+}
+
+"$@"
