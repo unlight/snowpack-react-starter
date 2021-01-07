@@ -26,7 +26,7 @@ module.exports = {
         'max-params': [1, { max: 5 }],
         'no-unneeded-ternary': [1],
     },
-    ignorePatterns: ['!src/**'],
+    ignorePatterns: ['@generated/**', '*.config.js', '.*rc.js'],
     overrides: [
         {
             files: ['*.spec.{ts,tsx}', '**/testing/**/*.{ts,tsx}'],
