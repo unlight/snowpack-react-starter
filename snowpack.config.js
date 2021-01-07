@@ -15,6 +15,9 @@ module.exports = {
                     assets: '[name].[contenthash:6].[ext]',
                 },
                 extendConfig: (config) => {
+                    const path = require('path');
+                    const isProduction = process.env.NODE_ENV === 'production';
+
                     config.output.path = `${config.output.path}/dist`;
                     config.output.publicPath = '';
                     const rules = config.module.rules;
@@ -23,6 +26,14 @@ module.exports = {
                     config.optimization.runtimeChunk = {
                         name: 'runtime',
                     };
+
+                    // Webpack is runnning over prepared by snowpack build
+
+                    if (isProduction) {
+                        config.resolve.alias[
+                            path.resolve('build/environments/environment.js')
+                        ] = path.resolve('build/environments/environment.prod.js');
+                    }
 
                     return config;
                 },
@@ -33,6 +44,7 @@ module.exports = {
         open: 'none',
     },
     installOptions: {
+        polyfillNode: true,
         installTypes: true,
     },
 };
