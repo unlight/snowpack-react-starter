@@ -14,14 +14,14 @@ module.exports = {
                     js: '[name].[contenthash:6].js',
                     assets: '[name].[contenthash:6].[ext]',
                 },
-                extendConfig: (config) => {
+                extendConfig: config => {
                     const path = require('path');
                     const isProduction = process.env.NODE_ENV === 'production';
 
                     config.output.path = `${config.output.path}/dist`;
                     config.output.publicPath = '';
                     const rules = config.module.rules;
-                    const cssRule = rules.find((r) => String(r.test) === '/\\.css$/');
+                    const cssRule = rules.find(r => String(r.test) === '/\\.css$/');
 
                     config.optimization.runtimeChunk = {
                         name: 'runtime',
@@ -43,8 +43,11 @@ module.exports = {
     devOptions: {
         open: 'none',
     },
-    installOptions: {
+    packageOptions: {
         polyfillNode: true,
         installTypes: true,
+    },
+    buildOptions: {
+        sourcemap: false,
     },
 };
